@@ -1,0 +1,268 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7DE6AD5A1357F100007D6B75 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DE6AD591357F100007D6B75 /* UIKit.framework */; };
+		7DE6AD5C1357F100007D6B75 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DE6AD5B1357F100007D6B75 /* Foundation.framework */; };
+		7DE6AD5E1357F100007D6B75 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DE6AD5D1357F100007D6B75 /* CoreGraphics.framework */; };
+		7DE6AD641357F100007D6B75 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7DE6AD621357F100007D6B75 /* InfoPlist.strings */; };
+		7DE6AD671357F100007D6B75 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DE6AD661357F100007D6B75 /* main.m */; };
+		7DE6AD6A1357F100007D6B75 /* CoolButtonsAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DE6AD691357F100007D6B75 /* CoolButtonsAppDelegate.m */; };
+		7DE6AD6D1357F100007D6B75 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7DE6AD6B1357F100007D6B75 /* MainWindow.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		7DE6AD551357F100007D6B75 /* CoolButtons.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoolButtons.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7DE6AD591357F100007D6B75 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		7DE6AD5B1357F100007D6B75 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		7DE6AD5D1357F100007D6B75 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		7DE6AD611357F100007D6B75 /* CoolButtons-Info.plist */ = {isa = PBXFileReference; path = "CoolButtons-Info.plist"; sourceTree = "<group>"; };
+		7DE6AD631357F100007D6B75 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		7DE6AD651357F100007D6B75 /* CoolButtons-Prefix.pch */ = {isa = PBXFileReference; path = "CoolButtons-Prefix.pch"; sourceTree = "<group>"; };
+		7DE6AD661357F100007D6B75 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		7DE6AD681357F100007D6B75 /* CoolButtonsAppDelegate.h */ = {isa = PBXFileReference; path = CoolButtonsAppDelegate.h; sourceTree = "<group>"; };
+		7DE6AD691357F100007D6B75 /* CoolButtonsAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoolButtonsAppDelegate.m; sourceTree = "<group>"; };
+		7DE6AD6C1357F100007D6B75 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7DE6AD521357F100007D6B75 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7DE6AD5A1357F100007D6B75 /* UIKit.framework in Frameworks */,
+				7DE6AD5C1357F100007D6B75 /* Foundation.framework in Frameworks */,
+				7DE6AD5E1357F100007D6B75 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7DE6AD4A1357F100007D6B75 = {
+			isa = PBXGroup;
+			children = (
+				7DE6AD5F1357F100007D6B75 /* CoolButtons */,
+				7DE6AD581357F100007D6B75 /* Frameworks */,
+				7DE6AD561357F100007D6B75 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		7DE6AD561357F100007D6B75 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7DE6AD551357F100007D6B75 /* CoolButtons.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7DE6AD581357F100007D6B75 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7DE6AD591357F100007D6B75 /* UIKit.framework */,
+				7DE6AD5B1357F100007D6B75 /* Foundation.framework */,
+				7DE6AD5D1357F100007D6B75 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7DE6AD5F1357F100007D6B75 /* CoolButtons */ = {
+			isa = PBXGroup;
+			children = (
+				7DE6AD681357F100007D6B75 /* CoolButtonsAppDelegate.h */,
+				7DE6AD691357F100007D6B75 /* CoolButtonsAppDelegate.m */,
+				7DE6AD6B1357F100007D6B75 /* MainWindow.xib */,
+				7DE6AD601357F100007D6B75 /* Supporting Files */,
+			);
+			path = CoolButtons;
+			sourceTree = "<group>";
+		};
+		7DE6AD601357F100007D6B75 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7DE6AD611357F100007D6B75 /* CoolButtons-Info.plist */,
+				7DE6AD621357F100007D6B75 /* InfoPlist.strings */,
+				7DE6AD651357F100007D6B75 /* CoolButtons-Prefix.pch */,
+				7DE6AD661357F100007D6B75 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7DE6AD541357F100007D6B75 /* CoolButtons */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7DE6AD701357F100007D6B75 /* Build configuration list for PBXNativeTarget "CoolButtons" */;
+			buildPhases = (
+				7DE6AD511357F100007D6B75 /* Sources */,
+				7DE6AD521357F100007D6B75 /* Frameworks */,
+				7DE6AD531357F100007D6B75 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CoolButtons;
+			productName = CoolButtons;
+			productReference = 7DE6AD551357F100007D6B75 /* CoolButtons.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7DE6AD4C1357F100007D6B75 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				ORGANIZATIONNAME = "Relevance, Inc.";
+			};
+			buildConfigurationList = 7DE6AD4F1357F100007D6B75 /* Build configuration list for PBXProject "CoolButtons" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DE6AD4A1357F100007D6B75;
+			productRefGroup = 7DE6AD561357F100007D6B75 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7DE6AD541357F100007D6B75 /* CoolButtons */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7DE6AD531357F100007D6B75 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7DE6AD641357F100007D6B75 /* InfoPlist.strings in Resources */,
+				7DE6AD6D1357F100007D6B75 /* MainWindow.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7DE6AD511357F100007D6B75 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7DE6AD671357F100007D6B75 /* main.m in Sources */,
+				7DE6AD6A1357F100007D6B75 /* CoolButtonsAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		7DE6AD621357F100007D6B75 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7DE6AD631357F100007D6B75 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		7DE6AD6B1357F100007D6B75 /* MainWindow.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7DE6AD6C1357F100007D6B75 /* en */,
+			);
+			name = MainWindow.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		7DE6AD6E1357F100007D6B75 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		7DE6AD6F1357F100007D6B75 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+			};
+			name = Release;
+		};
+		7DE6AD711357F100007D6B75 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CoolButtons/CoolButtons-Prefix.pch";
+				INFOPLIST_FILE = "CoolButtons/CoolButtons-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		7DE6AD721357F100007D6B75 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CoolButtons/CoolButtons-Prefix.pch";
+				INFOPLIST_FILE = "CoolButtons/CoolButtons-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALIDATE_PRODUCT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7DE6AD4F1357F100007D6B75 /* Build configuration list for PBXProject "CoolButtons" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7DE6AD6E1357F100007D6B75 /* Debug */,
+				7DE6AD6F1357F100007D6B75 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7DE6AD701357F100007D6B75 /* Build configuration list for PBXNativeTarget "CoolButtons" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7DE6AD711357F100007D6B75 /* Debug */,
+				7DE6AD721357F100007D6B75 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7DE6AD4C1357F100007D6B75 /* Project object */;
+}
