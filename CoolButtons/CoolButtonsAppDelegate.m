@@ -7,6 +7,7 @@
 //
 
 #import "CoolButtonsAppDelegate.h"
+#import "CoolButtonsViewController.h"
 
 @implementation CoolButtonsAppDelegate
 
@@ -15,6 +16,9 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    CoolButtonsViewController *viewController = [[CoolButtonsViewController alloc] init];
+    [self.window addSubview:viewController.view];
+    
     // Override point for customization after application launch.
     [self.window makeKeyAndVisible];
     return YES;

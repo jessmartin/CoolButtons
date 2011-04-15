@@ -14,6 +14,10 @@
 		7DE6AD671357F100007D6B75 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DE6AD661357F100007D6B75 /* main.m */; };
 		7DE6AD6A1357F100007D6B75 /* CoolButtonsAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DE6AD691357F100007D6B75 /* CoolButtonsAppDelegate.m */; };
 		7DE6AD6D1357F100007D6B75 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7DE6AD6B1357F100007D6B75 /* MainWindow.xib */; };
+		7DE6AD751357F18B007D6B75 /* CoolButtonsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DE6AD741357F18B007D6B75 /* CoolButtonsViewController.m */; };
+		7DE6AD781357F2EA007D6B75 /* CoolButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DE6AD771357F2EA007D6B75 /* CoolButton.m */; };
+		7DE6AD8213588DD4007D6B75 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DE6AD8113588DD4007D6B75 /* QuartzCore.framework */; };
+		7DE6AD8C1358E526007D6B75 /* sync_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 7DE6AD8B1358E526007D6B75 /* sync_button.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,13 +25,19 @@
 		7DE6AD591357F100007D6B75 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		7DE6AD5B1357F100007D6B75 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		7DE6AD5D1357F100007D6B75 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		7DE6AD611357F100007D6B75 /* CoolButtons-Info.plist */ = {isa = PBXFileReference; path = "CoolButtons-Info.plist"; sourceTree = "<group>"; };
+		7DE6AD611357F100007D6B75 /* CoolButtons-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CoolButtons-Info.plist"; sourceTree = "<group>"; };
 		7DE6AD631357F100007D6B75 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		7DE6AD651357F100007D6B75 /* CoolButtons-Prefix.pch */ = {isa = PBXFileReference; path = "CoolButtons-Prefix.pch"; sourceTree = "<group>"; };
+		7DE6AD651357F100007D6B75 /* CoolButtons-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CoolButtons-Prefix.pch"; sourceTree = "<group>"; };
 		7DE6AD661357F100007D6B75 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		7DE6AD681357F100007D6B75 /* CoolButtonsAppDelegate.h */ = {isa = PBXFileReference; path = CoolButtonsAppDelegate.h; sourceTree = "<group>"; };
+		7DE6AD681357F100007D6B75 /* CoolButtonsAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoolButtonsAppDelegate.h; sourceTree = "<group>"; };
 		7DE6AD691357F100007D6B75 /* CoolButtonsAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoolButtonsAppDelegate.m; sourceTree = "<group>"; };
 		7DE6AD6C1357F100007D6B75 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
+		7DE6AD731357F18B007D6B75 /* CoolButtonsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoolButtonsViewController.h; sourceTree = "<group>"; };
+		7DE6AD741357F18B007D6B75 /* CoolButtonsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoolButtonsViewController.m; sourceTree = "<group>"; };
+		7DE6AD761357F2EA007D6B75 /* CoolButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoolButton.h; sourceTree = "<group>"; };
+		7DE6AD771357F2EA007D6B75 /* CoolButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoolButton.m; sourceTree = "<group>"; };
+		7DE6AD8113588DD4007D6B75 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		7DE6AD8B1358E526007D6B75 /* sync_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sync_button.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +45,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7DE6AD8213588DD4007D6B75 /* QuartzCore.framework in Frameworks */,
 				7DE6AD5A1357F100007D6B75 /* UIKit.framework in Frameworks */,
 				7DE6AD5C1357F100007D6B75 /* Foundation.framework in Frameworks */,
 				7DE6AD5E1357F100007D6B75 /* CoreGraphics.framework in Frameworks */,
@@ -47,6 +58,7 @@
 		7DE6AD4A1357F100007D6B75 = {
 			isa = PBXGroup;
 			children = (
+				7DE6AD8113588DD4007D6B75 /* QuartzCore.framework */,
 				7DE6AD5F1357F100007D6B75 /* CoolButtons */,
 				7DE6AD581357F100007D6B75 /* Frameworks */,
 				7DE6AD561357F100007D6B75 /* Products */,
@@ -78,6 +90,10 @@
 				7DE6AD691357F100007D6B75 /* CoolButtonsAppDelegate.m */,
 				7DE6AD6B1357F100007D6B75 /* MainWindow.xib */,
 				7DE6AD601357F100007D6B75 /* Supporting Files */,
+				7DE6AD731357F18B007D6B75 /* CoolButtonsViewController.h */,
+				7DE6AD741357F18B007D6B75 /* CoolButtonsViewController.m */,
+				7DE6AD761357F2EA007D6B75 /* CoolButton.h */,
+				7DE6AD771357F2EA007D6B75 /* CoolButton.m */,
 			);
 			path = CoolButtons;
 			sourceTree = "<group>";
@@ -85,6 +101,7 @@
 		7DE6AD601357F100007D6B75 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				7DE6AD8B1358E526007D6B75 /* sync_button.png */,
 				7DE6AD611357F100007D6B75 /* CoolButtons-Info.plist */,
 				7DE6AD621357F100007D6B75 /* InfoPlist.strings */,
 				7DE6AD651357F100007D6B75 /* CoolButtons-Prefix.pch */,
@@ -145,6 +162,7 @@
 			files = (
 				7DE6AD641357F100007D6B75 /* InfoPlist.strings in Resources */,
 				7DE6AD6D1357F100007D6B75 /* MainWindow.xib in Resources */,
+				7DE6AD8C1358E526007D6B75 /* sync_button.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -157,6 +175,8 @@
 			files = (
 				7DE6AD671357F100007D6B75 /* main.m in Sources */,
 				7DE6AD6A1357F100007D6B75 /* CoolButtonsAppDelegate.m in Sources */,
+				7DE6AD751357F18B007D6B75 /* CoolButtonsViewController.m in Sources */,
+				7DE6AD781357F2EA007D6B75 /* CoolButton.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
