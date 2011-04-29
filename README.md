@@ -18,12 +18,9 @@ shadows, gradient, inner shadow, and borders.
 Todo
 ================================
 
-* Set an active state on the button so that it changes when touched
 * Fix the border to be an inner glow for more accuracy to the Apple
   buttons
-* Make a cooler demo app that shows a whole host of different buttons
-  and maybe lets you adjust the button color on the fly via a slider
-* Add additional button customization to turn on/off the various
+* Add additional button customization to turn on/off the various design
   elements
 
 
