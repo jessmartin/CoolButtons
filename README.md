@@ -4,6 +4,8 @@ CoolButtons
 CoolButtons is a subclass of UIButton that draws glassy iOS style
 buttons, all using CoreGraphics and no images.
 
+![Button Comparison](https://github.com/jessmartin/CoolButtons/raw/master/button_comparison.png)
+
 Usage
 ================================
 
