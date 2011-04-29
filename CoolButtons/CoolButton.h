@@ -11,8 +11,13 @@
 
 @interface CoolButton : UIButton {
     UIColor *_buttonColor;
+    UIView *_innerView;
+    CALayer *_highlightLayer;
 }
 
 @property (nonatomic, retain)UIColor *buttonColor;
+@property (nonatomic, retain)UIView *innerView;
+@property (nonatomic, retain)CALayer *highlightLayer;
+
 
 @end

@@ -7,11 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CoolButtonsViewController.h"
 
 @interface CoolButtonsAppDelegate : NSObject <UIApplicationDelegate> {
-
+    CoolButtonsViewController *viewController;
 }
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
+@property (nonatomic, retain) CoolButtonsViewController *viewController;
 
 @end
