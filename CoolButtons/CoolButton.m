@@ -20,7 +20,7 @@
 {
     if ((self=[super initWithFrame:frame]))
     {
-        self.innerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.bounds.size.width, self.bounds.size.height)];
+        self.innerView = [[[UIView alloc] initWithFrame:CGRectMake(0, 0, self.bounds.size.width, self.bounds.size.height)] autorelease];
         [self.innerView setUserInteractionEnabled:false];
         
         [self addTarget:self action:@selector(addHighlight) forControlEvents:UIControlEventTouchDown];
@@ -90,6 +90,14 @@
     [[self layer] setShadowRadius:0.5];
         
     [[self layer] setCornerRadius:5.0];
+}
+
+-(void)dealloc
+{
+    self.innerView = nil;
+    self.highlightLayer = nil;
+    self.buttonColor = nil;
+    [super dealloc];
 }
 
 @end
