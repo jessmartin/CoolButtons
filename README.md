@@ -9,6 +9,11 @@ buttons, all using CoreGraphics and no images.
 Usage
 ================================
 
+Add the QuartzCore.framework to your project:
+
+    # It should be around here somewhere
+    /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk/System/Library/Frameworks/QuartzCore.framework
+
 Add the CoolButton.m/.h to your project, create an instance of a
 CoolButton, then set the buttonColor like so.
 
