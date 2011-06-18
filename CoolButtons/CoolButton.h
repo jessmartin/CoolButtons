@@ -19,5 +19,6 @@
 @property (nonatomic, retain)UIView *innerView;
 @property (nonatomic, retain)CALayer *highlightLayer;
 
+- (void)setButtonColor:(UIColor *)buttonColor;
 
 @end

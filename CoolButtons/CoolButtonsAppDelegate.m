@@ -16,11 +16,13 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    self.viewController = [[CoolButtonsViewController alloc] init];
+    self.viewController = [[CoolButtonsViewController alloc] initWithNibName:@"CoolButtons" bundle:nil];
     [self.window addSubview:self.viewController.view];
     
     // Override point for customization after application launch.
     [self.window makeKeyAndVisible];
+    
+    application.statusBarHidden = YES;
     return YES;
 }
 

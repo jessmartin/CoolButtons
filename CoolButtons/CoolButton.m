@@ -9,6 +9,9 @@
 #import <QuartzCore/QuartzCore.h>
 #import "CoolButton.h"
 
+@interface CoolButton (PrivateMethods)
+- (void) buildView;
+@end
 
 @implementation CoolButton
 
@@ -16,27 +19,40 @@
 @synthesize innerView=_innerView;
 @synthesize highlightLayer=_highlightLayer;
 
+- (void) awakeFromNib {
+    NSLog(@"Awake from nib called");
+    [self buildView];
+}
+
 - (id)initWithFrame:(CGRect)frame
 {
+    NSLog(@"Init called");
     if ((self=[super initWithFrame:frame]))
     {
-        self.innerView = [[[UIView alloc] initWithFrame:CGRectMake(0, 0, self.bounds.size.width, self.bounds.size.height)] autorelease];
-        [self.innerView setUserInteractionEnabled:false];
-        
-        [self addTarget:self action:@selector(addHighlight) forControlEvents:UIControlEventTouchDown];
-        [self addTarget:self action:@selector(removeHighlight) forControlEvents:UIControlEventTouchCancel|UIControlEventTouchUpInside|UIControlEventTouchUpOutside];
-        
-        if ([[self subviews] count] > 0)
-            [self insertSubview:self.innerView belowSubview:[[self subviews] objectAtIndex:0]];
-        else
-            [self addSubview:self.innerView];
-
-        self.highlightLayer = [CALayer layer];
-        [self.highlightLayer setAnchorPoint:CGPointMake(0, 0)];
-        [self.highlightLayer setBounds:[self bounds]];
-        [self.highlightLayer setBackgroundColor:[[UIColor colorWithWhite:0.0 alpha:0.3] CGColor]];
+        [self buildView];
     }
     return self;
+}
+
+-(void) buildView
+{
+    self.innerView = [[[UIView alloc] initWithFrame:CGRectMake(0, 0, self.bounds.size.width, self.bounds.size.height)] autorelease];
+    [self.innerView setUserInteractionEnabled:false];
+    
+    [self addTarget:self action:@selector(addHighlight) forControlEvents:UIControlEventTouchDown];
+    [self addTarget:self action:@selector(removeHighlight) forControlEvents:UIControlEventTouchCancel|UIControlEventTouchUpInside|UIControlEventTouchUpOutside];
+    
+    if ([[self subviews] count] > 0)
+        [self insertSubview:self.innerView belowSubview:[[self subviews] objectAtIndex:0]];
+    else
+        [self addSubview:self.innerView];
+    
+    self.highlightLayer = [CALayer layer];
+    [self.highlightLayer setAnchorPoint:CGPointMake(0, 0)];
+    [self.highlightLayer setBounds:[self bounds]];
+    [self.highlightLayer setBackgroundColor:[[UIColor colorWithWhite:0.0 alpha:0.3] CGColor]];
+    
+    self.buttonColor = [UIColor colorWithRed:73/255.0 green:107/255.0 blue:155/255.0 alpha:1.0];
 }
 
 -(void)addHighlight
@@ -49,6 +65,13 @@
     [self.highlightLayer removeFromSuperlayer];
 }
 
+- (void)setButtonColor:(UIColor *)value
+{
+	_buttonColor = value;
+    [self.innerView setBackgroundColor:[self buttonColor]];
+    [self.innerView setNeedsDisplay];
+}
+
 -(void)drawRect:(CGRect)rect
 {
     // create a view to store all the content
@@ -57,7 +80,8 @@
     // create gradient layer
     CAGradientLayer *gradientLayer = [CAGradientLayer layer];
     [gradientLayer setAnchorPoint:CGPointMake(0, 0)];
-    [gradientLayer setBounds:CGRectMake(0, 0, self.bounds.size.width, self.bounds.size.height/2)];
+    // Add one to account for oddities when using CoolButtons in UIToolbar
+    [gradientLayer setBounds:CGRectMake(0, 0, self.bounds.size.width, (self.bounds.size.height/2.0) + 1)]; 
     [gradientLayer setColors:[NSArray arrayWithObjects:
                               (id)[[UIColor colorWithWhite:1.0 alpha:0.3] CGColor], 
                               (id)[[UIColor colorWithWhite:1.0 alpha:0.10] CGColor], nil]];
