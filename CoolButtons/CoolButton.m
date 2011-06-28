@@ -21,6 +21,8 @@
 
 - (void) awakeFromNib {
     NSLog(@"Awake from nib called");
+    [self setButtonColor:[self backgroundColor]];
+    [self setBackgroundColor:[UIColor clearColor]];
     [self buildView];
 }
 
@@ -29,6 +31,7 @@
     NSLog(@"Init called");
     if ((self=[super initWithFrame:frame]))
     {
+        [self setButtonColor:[UIColor colorWithRed:73/255.0 green:107/255.0 blue:155/255.0 alpha:1.0]];
         [self buildView];
     }
     return self;
@@ -51,29 +54,33 @@
     [self.highlightLayer setAnchorPoint:CGPointMake(0, 0)];
     [self.highlightLayer setBounds:[self bounds]];
     [self.highlightLayer setBackgroundColor:[[UIColor colorWithWhite:0.0 alpha:0.3] CGColor]];
-    
-    self.buttonColor = [UIColor colorWithRed:73/255.0 green:107/255.0 blue:155/255.0 alpha:1.0];
 }
 
 -(void)addHighlight
 {
+    NSLog(@"adding highlight layer");
     [[self.innerView layer] insertSublayer:self.highlightLayer atIndex:3];
 }
 
 -(void)removeHighlight
 {
+    NSLog(@"removing highlight layer");
     [self.highlightLayer removeFromSuperlayer];
 }
 
 - (void)setButtonColor:(UIColor *)value
 {
-	_buttonColor = value;
+	[_buttonColor autorelease];
+    _buttonColor = [value retain];
     [self.innerView setBackgroundColor:[self buttonColor]];
-    [self.innerView setNeedsDisplay];
 }
 
 -(void)drawRect:(CGRect)rect
 {
+    NSLog(@"drawing the rect!");
+    for (int i = 0; i < [[[self.innerView layer] sublayers] count]; i++ ) {
+        [[[[self.innerView layer] sublayers] objectAtIndex:0] removeFromSuperlayer];
+    }
     // create a view to store all the content
     [self.innerView setBackgroundColor:[self buttonColor]];
 
