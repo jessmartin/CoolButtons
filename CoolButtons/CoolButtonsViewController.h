@@ -14,6 +14,7 @@
     IBOutlet UISlider *greenSlider;
     IBOutlet UISlider *blueSlider;
     IBOutlet UIImageView *myPic;
+    IBOutlet UIImageView *aintSheABeaut;
     IBOutlet UIView *colorPickerView;
     
     IBOutlet CoolButton *blueButton;
@@ -27,6 +28,7 @@
 @property(retain, nonatomic) IBOutlet UISlider *greenSlider;
 @property(retain, nonatomic) IBOutlet UISlider *blueSlider;
 @property(retain, nonatomic) IBOutlet UIImageView *myPic;
+@property(retain, nonatomic) IBOutlet UIImageView *aintSheABeaut;
 @property(retain, nonatomic) IBOutlet UIView *colorPickerView;
 @property(retain, nonatomic) CoolButton *blueButton;
 

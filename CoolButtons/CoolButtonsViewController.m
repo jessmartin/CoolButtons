@@ -15,6 +15,8 @@
 @synthesize blueSlider;
 @synthesize blueButton;
 @synthesize myPic;
+@synthesize aintSheABeaut;
+@synthesize colorPickerView;
 
 - (void)dealloc
 {
@@ -30,11 +32,6 @@
     // Release any cached data, images, etc that aren't in use.
 }
 
-- (IBAction)buttonTouched
-{
-    NSLog(@"button touched");
-}
-
 #pragma mark - View lifecycle
 
 // Implement loadView to create a view hierarchy programmatically, without using a nib.
@@ -47,6 +44,10 @@
 //    self.view.backgroundColor = [UIColor colorWithPatternImage:backgroundImage];
     
 //    [self.blueButton setButtonColor:[UIColor colorWithRed:73/255.0 green:107/255.0 blue:155/255.0 alpha:1.0]];
+    [self.blueButton setSelected:NO];
+    [self.blueButton setTitle:@"Tap to change color" forState:UIControlStateNormal];
+    [self.blueButton setTitle:@"Tap to hide color picker" forState:UIControlStateSelected];
+    
     [self sliderAction:nil];
      
     UIImage *redSliderLeftTrackImage = [[UIImage imageNamed:@"red_slider_min_image"] stretchableImageWithLeftCapWidth: 9 topCapHeight: 0];
@@ -77,16 +78,19 @@
 {   
     if (colorPickerView.hidden) {
         colorPickerView.hidden = NO;
+        blueButton.selected = YES;
         colorPickerView.alpha = 0.0;
         [UIView animateWithDuration:0.2 
                               delay:0 
                             options:UIViewAnimationOptionCurveEaseInOut 
                          animations:^{
                              colorPickerView.alpha = 1.0;
+                             aintSheABeaut.alpha = 0.0;
                          } 
                          completion:nil];
         
     } else {
+        blueButton.selected = NO;
         [UIView animateWithDuration:0.2 
                               delay:0 
                             options:UIViewAnimationOptionCurveEaseInOut 
@@ -95,6 +99,7 @@
                          }
                          completion:^(BOOL finished){
                              colorPickerView.hidden = YES;
+                             aintSheABeaut.alpha = 1.0;
                          }];
     }
 }
