@@ -109,6 +109,42 @@
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString: @"http://www.github.com/jessmartin/coolbuttons"]];
 }
 
+- (IBAction)didTouchJessMartDotIn:(id)sender
+{
+    [UIView animateWithDuration:0.2
+                          delay:0
+                        options:UIViewAnimationOptionCurveEaseInOut 
+                     animations:^{
+                         myPic.transform = CGAffineTransformMakeRotation(0);
+                     }
+                     completion:^(BOOL finished){
+                     }];
+}
+
+- (void)unanimateJessMartDotIn
+{
+    [UIView animateWithDuration:0.2
+                          delay:0
+                        options:UIViewAnimationOptionCurveEaseInOut 
+                     animations:^{
+                         myPic.transform = CGAffineTransformMakeRotation(-0.08);
+                     }
+                     completion:^(BOOL finished){
+                     }];
+    
+}
+
+- (IBAction)didTouchCancelJessMartDotIn:(id)sender
+{
+    [self unanimateJessMartDotIn];
+}
+
+- (IBAction)goToJessMartDotIn:(id)sender
+{
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString: @"http://jessmart.in"]];
+    [self unanimateJessMartDotIn];
+}
+
 - (void)viewDidUnload
 {
     [super viewDidUnload];

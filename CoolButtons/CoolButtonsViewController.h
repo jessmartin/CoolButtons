@@ -13,7 +13,7 @@
     IBOutlet UISlider *redSlider;
     IBOutlet UISlider *greenSlider;
     IBOutlet UISlider *blueSlider;
-    IBOutlet UIImageView *myPic;
+    IBOutlet UIButton *myPic;
     IBOutlet UIImageView *aintSheABeaut;
     IBOutlet UIView *colorPickerView;
     
@@ -22,12 +22,15 @@
 
 - (IBAction)sliderAction:(id)sender;
 - (IBAction)goToGitHub:(id)sender;
+- (IBAction)goToJessMartDotIn:(id)sender;
+- (IBAction)didTouchJessMartDotIn:(id)sender;
+- (IBAction)didTouchCancelJessMartDotIn:(id)sender;
 - (IBAction)showColorPicker:(id)sender;
 
 @property(retain, nonatomic) IBOutlet UISlider *redSlider;
 @property(retain, nonatomic) IBOutlet UISlider *greenSlider;
 @property(retain, nonatomic) IBOutlet UISlider *blueSlider;
-@property(retain, nonatomic) IBOutlet UIImageView *myPic;
+@property(retain, nonatomic) IBOutlet UIButton *myPic;
 @property(retain, nonatomic) IBOutlet UIImageView *aintSheABeaut;
 @property(retain, nonatomic) IBOutlet UIView *colorPickerView;
 @property(retain, nonatomic) CoolButton *blueButton;
