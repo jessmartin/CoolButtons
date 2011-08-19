@@ -8,6 +8,7 @@
 
 #import "CoolButtonsViewController.h"
 #import <QuartzCore/QuartzCore.h>
+#import "FlurryAnalytics.h"
 
 @implementation CoolButtonsViewController
 @synthesize redSlider;
@@ -76,6 +77,7 @@
 
 - (IBAction)showColorPicker:(id)sender
 {   
+    [FlurryAnalytics logEvent:@"TOGGLE_COLOR_PICKER"];
     if (colorPickerView.hidden) {
         colorPickerView.hidden = NO;
         blueButton.selected = YES;
@@ -106,6 +108,7 @@
 
 - (IBAction)goToGitHub:(id)sender
 {
+    [FlurryAnalytics logEvent:@"GO_TO_GITHUB"];
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString: @"http://www.github.com/jessmartin/coolbuttons"]];
 }
 
@@ -141,6 +144,7 @@
 
 - (IBAction)goToJessMartDotIn:(id)sender
 {
+    [FlurryAnalytics logEvent:@"GO_TO_JESSMARTIN"];
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString: @"http://jessmart.in"]];
     [self unanimateJessMartDotIn];
 }
