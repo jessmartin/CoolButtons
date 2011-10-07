@@ -19,11 +19,6 @@
 @synthesize aintSheABeaut;
 @synthesize colorPickerView;
 
-- (void)dealloc
-{
-    [self.view release];
-    [super dealloc];
-}
 
 - (void)didReceiveMemoryWarning
 {

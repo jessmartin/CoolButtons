@@ -1,54 +1,93 @@
-//
-//  CoolButton.m
-//  CoolButtons
-//
-//  Created by Jess Martin on 4/14/11.
-//  Copyright 2011 Relevance, Inc. All rights reserved.
-//
+/*
+ * Author: Jess Martin
+ *
+ * Copyright (c) 2011 Jess Martin.
+ * All rights reserved.
+ *
+ * Permission is hereby granted, free of charge, to any person
+ * obtaining a copy of this software and associated documentation
+ * files (the "Software"), to deal in the Software without
+ * restriction, including without limitation the rights to use,
+ * copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the
+ * Software is furnished to do so, subject to the following
+ * conditions:
+ *
+ * The above copyright notice and this permission notice shall be
+ * included in all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+ * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+ * OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+ * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+ * HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+ * WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+ * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+ * OTHER DEALINGS IN THE SOFTWARE.
+ */
 
 #import <QuartzCore/QuartzCore.h>
 #import "CoolButton.h"
 
+
 @interface CoolButton (PrivateMethods)
-- (void) buildView;
+- (void)_buildView;
 @end
+
 
 @implementation CoolButton
 
-@synthesize buttonColor=_buttonColor;
-@synthesize innerView=_innerView;
-@synthesize highlightLayer=_highlightLayer;
 
-- (void) awakeFromNib {
-    NSLog(@"Awake from nib called");
+@synthesize buttonColor = _buttonColor;
+@synthesize innerView = _innerView;
+@synthesize highlightLayer = _highlightLayer;
+
+
+- (UIColor *)buttonColor
+{
+    return _buttonColor;
+}
+
+
+- (void)setButtonColor:(UIColor *)buttonColor
+{
+    _buttonColor = buttonColor;
+    [self.innerView setBackgroundColor:[self buttonColor]];
+}
+
+
+- (void)awakeFromNib
+{
     [self setButtonColor:[self backgroundColor]];
     [self setBackgroundColor:[UIColor clearColor]];
-    [self buildView];
+    [self _buildView];
 }
+
 
 - (id)initWithFrame:(CGRect)frame
 {
-    NSLog(@"Init called");
-    if ((self=[super initWithFrame:frame]))
+    if ((self = [super initWithFrame:frame]))
     {
         [self setButtonColor:[UIColor colorWithRed:73/255.0 green:107/255.0 blue:155/255.0 alpha:1.0]];
-        [self buildView];
+        [self _buildView];
     }
     return self;
 }
 
--(void) buildView
+
+- (void)_buildView
 {
-    self.innerView = [[[UIView alloc] initWithFrame:CGRectMake(0, 0, self.bounds.size.width, self.bounds.size.height)] autorelease];
+    self.innerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.bounds.size.width, self.bounds.size.height)];
     [self.innerView setUserInteractionEnabled:false];
     
     [self addTarget:self action:@selector(addHighlight) forControlEvents:UIControlEventTouchDown];
     [self addTarget:self action:@selector(removeHighlight) forControlEvents:UIControlEventTouchCancel|UIControlEventTouchUpInside|UIControlEventTouchUpOutside];
     
-    if ([[self subviews] count] > 0)
+    if ([[self subviews] count] > 0) {
         [self insertSubview:self.innerView belowSubview:[[self subviews] objectAtIndex:0]];
-    else
+    } else {
         [self addSubview:self.innerView];
+    }
     
     self.highlightLayer = [CALayer layer];
     [self.highlightLayer setAnchorPoint:CGPointMake(0, 0)];
@@ -56,29 +95,22 @@
     [self.highlightLayer setBackgroundColor:[[UIColor colorWithWhite:0.0 alpha:0.3] CGColor]];
 }
 
--(void)addHighlight
+
+- (void)addHighlight
 {
-    NSLog(@"adding highlight layer");
     [[self.innerView layer] insertSublayer:self.highlightLayer atIndex:3];
 }
 
--(void)removeHighlight
+
+- (void)removeHighlight
 {
-    NSLog(@"removing highlight layer");
     [self.highlightLayer removeFromSuperlayer];
 }
 
-- (void)setButtonColor:(UIColor *)value
-{
-	[_buttonColor autorelease];
-    _buttonColor = [value retain];
-    [self.innerView setBackgroundColor:[self buttonColor]];
-}
 
--(void)drawRect:(CGRect)rect
+- (void)drawRect:(CGRect)rect
 {
-    NSLog(@"drawing the rect!");
-    for (int i = 0; i < [[[self.innerView layer] sublayers] count]; i++ ) {
+    for (int i = 0; i < [[[self.innerView layer] sublayers] count]; i++) {
         [[[[self.innerView layer] sublayers] objectAtIndex:0] removeFromSuperlayer];
     }
     // create a view to store all the content
@@ -123,12 +155,5 @@
     [[self layer] setCornerRadius:5.0];
 }
 
--(void)dealloc
-{
-    self.innerView = nil;
-    self.highlightLayer = nil;
-    self.buttonColor = nil;
-    [super dealloc];
-}
 
 @end
