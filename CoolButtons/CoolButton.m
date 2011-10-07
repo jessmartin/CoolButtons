@@ -78,6 +78,7 @@
 - (void)_buildView
 {
     self.innerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.bounds.size.width, self.bounds.size.height)];
+    self.innerView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     [self.innerView setUserInteractionEnabled:false];
     
     [self addTarget:self action:@selector(addHighlight) forControlEvents:UIControlEventTouchDown];
@@ -91,13 +92,13 @@
     
     self.highlightLayer = [CALayer layer];
     [self.highlightLayer setAnchorPoint:CGPointMake(0, 0)];
-    [self.highlightLayer setBounds:[self bounds]];
     [self.highlightLayer setBackgroundColor:[[UIColor colorWithWhite:0.0 alpha:0.3] CGColor]];
 }
 
 
 - (void)addHighlight
 {
+    [self.highlightLayer setBounds:[self bounds]];
     [[self.innerView layer] insertSublayer:self.highlightLayer atIndex:3];
 }
 
