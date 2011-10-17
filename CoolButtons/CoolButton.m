@@ -19,11 +19,15 @@
 @synthesize innerView=_innerView;
 @synthesize highlightLayer=_highlightLayer;
 
-- (void) awakeFromNib {
-    NSLog(@"Awake from nib called");
-    [self setButtonColor:[self backgroundColor]];
-    [self setBackgroundColor:[UIColor clearColor]];
-    [self buildView];
+- (id)initWithCoder:(NSCoder *)coder {
+    self = [super initWithCoder:coder];
+    if (self) {
+        NSLog(@"initWithCoder");
+        [self setButtonColor:[self backgroundColor]];
+        [self setBackgroundColor:[UIColor clearColor]];
+        [self buildView];
+    }
+    return self;
 }
 
 - (id)initWithFrame:(CGRect)frame
@@ -78,9 +82,10 @@
 -(void)drawRect:(CGRect)rect
 {
     NSLog(@"drawing the rect!");
-    for (int i = 0; i < [[[self.innerView layer] sublayers] count]; i++ ) {
+    while ([[[self.innerView layer] sublayers] count] > 0) {
         [[[[self.innerView layer] sublayers] objectAtIndex:0] removeFromSuperlayer];
     }
+    
     // create a view to store all the content
     [self.innerView setBackgroundColor:[self buttonColor]];
 
