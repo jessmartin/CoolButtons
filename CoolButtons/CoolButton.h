@@ -8,17 +8,18 @@
 
 #import <Foundation/Foundation.h>
 
+@class CALayer;
+@class CAGradientLayer;
 
 @interface CoolButton : UIButton {
     UIColor *_buttonColor;
     UIView *_innerView;
+    // weak references:
     CALayer *_highlightLayer;
+    CAGradientLayer *_gradientLayer;
+    CAGradientLayer *_innerGlowLayer;
 }
 
 @property (nonatomic, retain)UIColor *buttonColor;
-@property (nonatomic, retain)UIView *innerView;
-@property (nonatomic, retain)CALayer *highlightLayer;
-
-- (void)setButtonColor:(UIColor *)buttonColor;
 
 @end
