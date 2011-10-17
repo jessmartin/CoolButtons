@@ -20,7 +20,7 @@
 - (id)initWithCoder:(NSCoder *)coder {
     self = [super initWithCoder:coder];
     if (self) {
-        NSLog(@"initWithCoder");
+        //NSLog(@"initWithCoder");
         [self setButtonColor:[self backgroundColor]];
         [self setBackgroundColor:[UIColor clearColor]];
         [self buildView];
@@ -30,7 +30,7 @@
 
 - (id)initWithFrame:(CGRect)frame
 {
-    NSLog(@"Init called");
+    //NSLog(@"Init called");
     if ((self=[super initWithFrame:frame]))
     {
         [self setButtonColor:[UIColor colorWithRed:73/255.0 green:107/255.0 blue:155/255.0 alpha:1.0]];
@@ -60,13 +60,13 @@
 
 -(void)addHighlight
 {
-    NSLog(@"adding highlight layer");
+    //NSLog(@"adding highlight layer");
     [[_innerView layer] insertSublayer:_highlightLayer atIndex:3];
 }
 
 -(void)removeHighlight
 {
-    NSLog(@"removing highlight layer");
+    //NSLog(@"removing highlight layer");
     [_highlightLayer removeFromSuperlayer];
 }
 
