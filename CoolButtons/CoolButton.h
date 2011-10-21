@@ -28,13 +28,16 @@
 
 #import <Foundation/Foundation.h>
 
+@class CALayer;
+@class CAGradientLayer;
 
-@interface CoolButton : UIButton
-
+@interface CoolButton : UIButton {
+    CAGradientLayer *_gradientLayer;
+    CAGradientLayer *_innerGlowLayer;
+}
 
 @property (nonatomic, strong) UIColor *buttonColor;
 @property (nonatomic, strong) UIView *innerView;
 @property (nonatomic, strong) CALayer *highlightLayer;
-
 
 @end
