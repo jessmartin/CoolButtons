@@ -134,6 +134,10 @@
     [self_layer setShadowOpacity:0.5];
     [self_layer setShadowRadius:0.5];
     [self_layer setCornerRadius:5.0];
+    
+    // add subtle shadow to text to make the eltters look punched in like Bar Buttons.
+    self.titleLabel.shadowColor = [UIColor colorWithWhite:0.0 alpha:0.25];
+    self.titleLabel.shadowOffset = CGSizeMake(0, -1);
 }
 
 
